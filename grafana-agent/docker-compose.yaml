@@ -1,0 +1,17 @@
+version: "3"
+services:
+  agent:
+    image: grafana/agent:latest
+    restart: always
+    ports:
+      - "9411:9411"
+    volumes:
+      - "./agent.yaml:/etc/agent-config/agent.yaml"
+    entrypoint:
+      - /bin/grafana-agent
+      - -server.http.address=0.0.0.0:9411
+      - -config.file=/etc/agent-config/agent.yaml
+      - -metrics.wal-directory=/tmp/agent/wal
+      - -enable-features=integrations-next
+      - -config.expand-env
+      - -config.enable-read-api
