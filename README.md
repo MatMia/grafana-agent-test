@@ -1,7 +1,7 @@
 # This project consists of 4 modules:
 
 * test-app:
-    Sample, simple Spring Boot application, which exposes prometheus metrics under 'localhost:8080/actuator/prometheus'. It needs to be run locally using *mvn run*.
+    Sample, simple Spring Boot application, which exposes prometheus metrics under 'localhost:8080/actuator/prometheus'. It needs to be run locally using *mvn*.
 
 * prometheus-remote-write-receiver:
     Prometheus instance with remote-write-receiver flag enabled. It expose endpoint, which is used by grafana agent to push metrics into.
